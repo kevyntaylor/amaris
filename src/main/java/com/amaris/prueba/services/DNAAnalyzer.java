@@ -5,6 +5,7 @@ import com.amaris.prueba.repositorys.DNARecordRepository;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,9 +13,10 @@ public class DNAAnalyzer {
 
     private static final Logger logger = LoggerFactory.getLogger(DNAAnalyzer.class);
 
-    private final DNARecordRepository dnaRecordRepository;
+    @Autowired
+    DNARecordRepository dnaRecordRepository;
 
-    public DNAAnalyzer(DNARecordRepository dnaRecordRepository) {
+    public DNAAnalyzer() {
         this.dnaRecordRepository = dnaRecordRepository;
     }
 
